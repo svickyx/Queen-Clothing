@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Queen-Clothing/static/css/main.4a48dd39.chunk.css",
-    "main.js": "/Queen-Clothing/static/js/main.0bfdab7f.chunk.js",
-    "main.js.map": "/Queen-Clothing/static/js/main.0bfdab7f.chunk.js.map",
+    "main.js": "/Queen-Clothing/static/js/main.938d1443.chunk.js",
+    "main.js.map": "/Queen-Clothing/static/js/main.938d1443.chunk.js.map",
     "runtime-main.js": "/Queen-Clothing/static/js/runtime-main.d96df6dc.js",
     "runtime-main.js.map": "/Queen-Clothing/static/js/runtime-main.d96df6dc.js.map",
     "static/js/2.91017f7e.chunk.js": "/Queen-Clothing/static/js/2.91017f7e.chunk.js",
     "static/js/2.91017f7e.chunk.js.map": "/Queen-Clothing/static/js/2.91017f7e.chunk.js.map",
     "index.html": "/Queen-Clothing/index.html",
-    "precache-manifest.ec1be913c31b9d76c5cb0b5abdc99360.js": "/Queen-Clothing/precache-manifest.ec1be913c31b9d76c5cb0b5abdc99360.js",
+    "precache-manifest.d57dd0d39a54640ddfceb68c55dd3c9b.js": "/Queen-Clothing/precache-manifest.d57dd0d39a54640ddfceb68c55dd3c9b.js",
     "service-worker.js": "/Queen-Clothing/service-worker.js",
     "static/css/main.4a48dd39.chunk.css.map": "/Queen-Clothing/static/css/main.4a48dd39.chunk.css.map",
     "static/js/2.91017f7e.chunk.js.LICENSE.txt": "/Queen-Clothing/static/js/2.91017f7e.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.d96df6dc.js",
     "static/js/2.91017f7e.chunk.js",
     "static/css/main.4a48dd39.chunk.css",
-    "static/js/main.0bfdab7f.chunk.js"
+    "static/js/main.938d1443.chunk.js"
   ]
 }

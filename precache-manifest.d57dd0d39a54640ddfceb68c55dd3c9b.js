@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9b90a7bfb85e703f6be17310885e121a",
+    "revision": "6408acbd40bf3349395ae0f9e4b905b5",
     "url": "/Queen-Clothing/index.html"
   },
   {
-    "revision": "166dd95ec66b99f2d4d1",
+    "revision": "b729de2521bf87bf29fd",
     "url": "/Queen-Clothing/static/css/main.4a48dd39.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Queen-Clothing/static/js/2.91017f7e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "166dd95ec66b99f2d4d1",
-    "url": "/Queen-Clothing/static/js/main.0bfdab7f.chunk.js"
+    "revision": "b729de2521bf87bf29fd",
+    "url": "/Queen-Clothing/static/js/main.938d1443.chunk.js"
   },
   {
     "revision": "98423d593ca6e7669288",
