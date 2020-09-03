@@ -7,8 +7,7 @@ import ItemCollection from '../../components/item-collection/item-collection';
 
 import '../collection-page/collection-page.scss';
 
-const CollectionPage = ({collection,match}) => {
-    console.log(match)
+const CollectionPage = ({collection}) => {
     const {title, items} = collection;
     return(
         <div className='collection-page'>
