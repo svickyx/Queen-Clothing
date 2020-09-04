@@ -36,3 +36,17 @@ export const selectCollection = memoize((collectionUrlParam) =>
 );
 //這個function的功能是因為在shop page裡面的url, /shop/hats 或者/shop/jackets 後面的urlparams 是string, 但是實際的collection.id是數字，
 //為了找到相對應的id 而創造出來的function
+
+
+//redux-thunk related
+export const selectCollectionIsFetching = createSelector(
+    [selectShop],
+    shop => shop.isFetching
+);
+
+export const selectorCollectionLoaded = createSelector(
+    [selectShop],
+    shop => !!shop.collections
+    //在shop.collections前面加兩個！！的意思是，如果shop.collection is an empty object {}, !!{} => true, otherwise, 任何其他東西都會是flase, 
+    // !![], !!null, !!‘’ => false
+)
