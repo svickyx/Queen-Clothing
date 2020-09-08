@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 // 錯誤： Route要帶 {}
 import {connect} from 'react-redux';
 
-import { fetchCollectionsStartAsync } from '../../redux/shop/shop-actions';
+import { fetchCollectionsStart } from '../../redux/shop/shop-actions';
 
 import CollectionOverviewContainer from '../../components/collection-overview/collection-overview.container';
 import CollectionPageContainer from '../collection-page/collection-page-container';
@@ -26,8 +26,8 @@ import CollectionPageContainer from '../collection-page/collection-page-containe
 
 class ShopPage extends React.Component {
     componentDidMount(){
-        const {fetchCollectionsStartAsync} = this.props;
-        fetchCollectionsStartAsync();
+        const {fetchCollectionsStart} = this.props;
+        fetchCollectionsStart();
     }
 
     //     collectionRef.onSnapshot(async snopshot => {
@@ -59,7 +59,7 @@ class ShopPage extends React.Component {
 
 
 const mapDispatchToMap = dispatch => ({
-    fetchCollectionsStartAsync: ()=> dispatch(fetchCollectionsStartAsync())
+    fetchCollectionsStart: ()=> dispatch(fetchCollectionsStart())
 });
 
 //mapDispatchToMap 這一步的最終結果是在shop-reducer裡面有了一個新的collection,裡面有原本在shop_data的東西,

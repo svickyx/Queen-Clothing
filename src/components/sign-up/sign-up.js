@@ -1,7 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import FormInput from '../form-input/form-input';
 import CustomButton from '../custom-button/custom-button';
-import {createUserProfileDocument, auth} from '../../firebase/firebase.utils';
+
+import { signUpStart } from '../../redux/user/user-action';
+
 import '../sign-up/sign-up.scss';
 
 class SignUp extends React.Component{
@@ -19,27 +23,31 @@ class SignUp extends React.Component{
    handleSubmit = async event => {
         event.preventDefault();
 
+        const { signUpStart } = this.props;
         const {displayName, email, password, confirmPassword} = this.state
         if(password !== confirmPassword){
             alert('password not match')
             return;
         }
+
+        signUpStart({email, password, displayName});
+
         // 這裡先檢查密碼有沒有一致，沒有一致什麼都不能做，給alert
-        try{
-            const {user} = await auth.createUserWithEmailAndPassword(email, password)
+        // try{
+        //     // const {user} = await auth.createUserWithEmailAndPassword(email, password)
             
-            await createUserProfileDocument(user, {displayName})
-            // 這裡不明白
-            this.setState({
-                displayName: '',
-                email: '',
-                password: '',
-                confirmPassword: ''
-            });
-            // 當createUserProfileDocument成功了之後，就可以把form清空了，用setState
-        }catch(error){
-            console.log('error', error.message)
-        }
+        //     // await createUserProfileDocument(user, {displayName})
+        //     // 這裡不明白
+        //     this.setState({
+        //         displayName: '',
+        //         email: '',
+        //         password: '',
+        //         confirmPassword: ''
+        //     });
+        //     // 當createUserProfileDocument成功了之後，就可以把form清空了，用setState
+        // }catch(error){
+        //     console.log('error', error.message)
+        // }
         
    };
 
@@ -95,4 +103,8 @@ class SignUp extends React.Component{
     }
 }
 
-export default SignUp;
+const mapDispatchToProps = dispatch => ({
+    signUpStart: userCredentials => dispatch(signUpStart(userCredentials))
+})
+
+export default connect(null, mapDispatchToProps)(SignUp);

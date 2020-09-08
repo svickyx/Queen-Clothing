@@ -38,6 +38,11 @@ const cartReducer = (state=INITIAL_STATE, action)=> {
                 cartItems: state.cartItems.filter(cartItem => cartItem.id !== action.payload.id)
                 // 這裡忘記把filter寫成一個function了，忘記接收一個props: cartItem
             }
+        case CartActionTypes.CLEAR_CART:
+            return{
+                ...state,
+                cartItems: []
+            }
         default:
             return state
     }

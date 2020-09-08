@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 
-
-import {auth} from '../../firebase/firebase.utils';
-
 import '../header/header.scss';
 
 import {ReactComponent as Logo} from '../../assets/crown.svg';
@@ -13,9 +10,10 @@ import CartIcon from '../cart-icon/cart-icon';
 import CartDropdown from '../cart-dropdown/cart-dropdown';
 import {selectCartHidden} from '../../redux/cart/cart-selector';
 import {selectCurrentUser} from '../../redux/user/user-selectors';
+import { signoutStart } from '../../redux/user/user-action';
 
 
-const Header = ({currentUser, hidden}) => {
+const Header = ({currentUser, hidden, signoutStart}) => {
     return(
         <div className='header'>
             <Link className='logo-container' to='/'>
@@ -25,7 +23,7 @@ const Header = ({currentUser, hidden}) => {
                 <Link className='option' to='/shop'>SHOP</Link>
                 <Link className='option' to='/contact'>CONTACT</Link>
                 {currentUser ? (
-                <div className='option' onClick = {() => auth.signOut()}>SIGN OUT</div>
+                <div className='option' onClick = { signoutStart }>SIGN OUT</div>
                 ):(
                 <Link className='option' to='/signin'>SIGN IN</Link>
                 )}
@@ -41,9 +39,13 @@ const Header = ({currentUser, hidden}) => {
 const mapStateToProps = createStructuredSelector ({
     currentUser: selectCurrentUser,
     hidden: selectCartHidden
-})
+});
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = dispatch => ({
+    signoutStart: ()=> dispatch(signoutStart())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
 
 //把寫好的cart-reducer跟cart drop down結合，實現點擊icon會出現dropdown, 再點擊會消失dropdown
 // 1. 通過mapstatetoprops實現，把state.cart.hidden帶進來（這個是root-reducer那裡來的）
